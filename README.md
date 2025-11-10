@@ -1,5 +1,11 @@
-End-of-Life
+PQC Enhanced DNP3 (Smart Grid)
 ========
+Contributors: Ralph Tan & Zukai Sagan
+
+This project expands on OpenDNP3 to integrate Post-Quantum Cryptography (PQC) algorithms. By incorporating PQC, we aim to future-proof communications, enhance resilience, and promote interoperability. This initiative will be a proactive step towards securing industrial contol systems against post quantum threats.
+
+End-of-Life
+======== 
 
 This project will reach end-of-life on September 1st, 2022. On this date:
 
