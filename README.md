@@ -53,7 +53,7 @@ cmake-gui .
 Manually enable `DNP3_EXAMPLES` variable by checking the box. Then press Configure and Generate buttons to update the build files. <br>
 Rerun build command to compile all targets, including newly added demo projects.
 ```
-cmake --build . -config Release --target ALL_BUILD
+cmake --build . --config Release --target ALL_BUILD
 ```
 
 #### 5. Open Two Terminal Windows (Developer Command Prompt for VS 2022)
