@@ -66,11 +66,22 @@ The Outstation starts first and begins listening for a connection on `0.0.0.0:20
 ```
 .\cpp\examples\outstation\Release\outstation-demo.exe
 ```
+Primary function is to simulate a physical device (like a sensor or circuit breaker) and report changes.
+* `c` = counter
+* `b` = binary
+* `d` = doublebit
+* `a` = analog
+* `o` = octet string
+* `quit` = exit
 
 #### 7. Start the Master (Window 2)
 The Master connects to the Outstation and initiates the DNP3 communication sequence (Disable Unsolicited, Clear Restart IIN, Integrity Poll, Enable Unsolicited, follow by periodic polls).
 ```
 .\cpp\examples\master\Release\master-demo.exe
 ```
+The Master application's function is to monitor the Outstation and send commands (controls) to it. 
+* `i` (Integrity Scan): Forces the Master to poll the Outstation for call current date (Class 0, 1, 2, and 3), regardless of whether the values have changed.
+* `e` (Exception Scan): Forces the Master to poll for Class 1, 2, and 3 event data (data changed since the last poll)
+* `c` (Send CROB): Sends a Control Relay Output Block command. This is how the Master would simulate telling the Outstation to operate a relay
 
 The log output in both windows will confirm the successful connection and exchange of DNP3 application layer messages, validating the entire process
