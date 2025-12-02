@@ -25,6 +25,7 @@
 #include <opendnp3/master/DefaultMasterApplication.h>
 #include <opendnp3/master/PrintingCommandResultCallback.h>
 #include <opendnp3/master/PrintingSOEHandler.h>
+#include "PQC_Handler.h"
 
 using namespace std;
 using namespace opendnp3;
@@ -50,6 +51,24 @@ class TestSOEHandler : public ISOEHandler
 
 int main(int argc, char* argv[])
 {
+    // --- PQC HYBRID KEY EXCHANGE START ---
+    std::cout << "=== PQC-ENHANCED MODE: INITIALIZING ===" << std::endl;
+    PQCHandler::Initialize();
+
+    std::vector<uint8_t> masterPublicKey;
+    std::vector<uint8_t> masterPrivateKey;
+
+    // 1. Master generates Kyber Keys
+    if(PQCHandler::GenerateKyberKeyPair(masterPublicKey, masterPrivateKey)) {
+        PQCHandler::PrintHex("Master Generated Kyber Public Key", masterPublicKey);
+    } else {
+        std::cerr << "PQC Key Generation Failed!" << std::endl;
+        return -1;
+    }
+    
+    std::cout << "=== PQC-ENHANCED MODE: KEYS READY ===" << std::endl;
+    // --- PQC HYBRID KEY EXCHANGE END ---
+
     // Specify what log levels to use. NORMAL is warning and above
     // You can add all the comms logging by uncommenting below
     const auto logLevels = levels::NORMAL | levels::ALL_APP_COMMS;

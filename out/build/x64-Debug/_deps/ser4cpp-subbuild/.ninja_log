@@ -1,0 +1,21 @@
+# ninja log v6
+3	52	7862677046421592	ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/ser4cpp-populate-mkdir	4f3f0fa5ba747b7d
+3	52	7862677046421592	C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps/ser4cpp-subbuild/ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/ser4cpp-populate-mkdir	4f3f0fa5ba747b7d
+53	844	7862677054345422	ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/ser4cpp-populate-download	c214126df7592c57
+53	844	7862677054345422	C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps/ser4cpp-subbuild/ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/ser4cpp-populate-download	c214126df7592c57
+846	885	7862677054818736	ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/ser4cpp-populate-update	54756a0e382958ea
+846	885	7862677054818736	C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps/ser4cpp-subbuild/ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/ser4cpp-populate-update	54756a0e382958ea
+885	925	7862677055251167	ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/ser4cpp-populate-patch	b146b2ea6a531e9d
+885	925	7862677055251167	C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps/ser4cpp-subbuild/ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/ser4cpp-populate-patch	b146b2ea6a531e9d
+925	965	7862677055606128	ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/ser4cpp-populate-configure	98b618aaa8893208
+925	965	7862677055606128	C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps/ser4cpp-subbuild/ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/ser4cpp-populate-configure	98b618aaa8893208
+965	1004	7862677055926900	ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/ser4cpp-populate-build	97e17546215b146e
+965	1004	7862677055926900	C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps/ser4cpp-subbuild/ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/ser4cpp-populate-build	97e17546215b146e
+1004	1043	7862677056401563	ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/ser4cpp-populate-install	c8eddeca631030fd
+1004	1043	7862677056401563	C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps/ser4cpp-subbuild/ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/ser4cpp-populate-install	c8eddeca631030fd
+1043	1082	7862677056716878	ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/ser4cpp-populate-test	b30e023073ace0bb
+1043	1082	7862677056716878	C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps/ser4cpp-subbuild/ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/ser4cpp-populate-test	b30e023073ace0bb
+1082	1135	7862677057350104	CMakeFiles/ser4cpp-populate-complete	bdc7faaf814f7edd
+1082	1135	7862677057350104	ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/ser4cpp-populate-done	bdc7faaf814f7edd
+1082	1135	7862677057350104	C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps/ser4cpp-subbuild/CMakeFiles/ser4cpp-populate-complete	bdc7faaf814f7edd
+1082	1135	7862677057350104	C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps/ser4cpp-subbuild/ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/ser4cpp-populate-done	bdc7faaf814f7edd

@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps/ser4cpp-subbuild/ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/download-ser4cpp-populate.cmake;COMMAND;C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps/ser4cpp-subbuild/ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/verify-ser4cpp-populate.cmake;COMMAND;C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps/ser4cpp-subbuild/ser4cpp-populate-prefix/src/ser4cpp-populate-stamp/extract-ser4cpp-populate.cmake
+source_dir=C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps/ser4cpp-src
+work_dir=C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps
+url(s)=https://github.com/automatak/ser4cpp/archive/3c449734dc530a8f465eb0982de29165cc4e23d5.zip
+hash=SHA1=937B759B7CC80180DA26B47037E796B59798A672
+      no_extract=
+

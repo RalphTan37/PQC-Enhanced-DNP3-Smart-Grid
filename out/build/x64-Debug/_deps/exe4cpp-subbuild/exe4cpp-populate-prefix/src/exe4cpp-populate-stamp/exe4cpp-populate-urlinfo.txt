@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps/exe4cpp-subbuild/exe4cpp-populate-prefix/src/exe4cpp-populate-stamp/download-exe4cpp-populate.cmake;COMMAND;C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps/exe4cpp-subbuild/exe4cpp-populate-prefix/src/exe4cpp-populate-stamp/verify-exe4cpp-populate.cmake;COMMAND;C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps/exe4cpp-subbuild/exe4cpp-populate-prefix/src/exe4cpp-populate-stamp/extract-exe4cpp-populate.cmake
+source_dir=C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps/exe4cpp-src
+work_dir=C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/out/build/x64-Debug/_deps
+url(s)=https://github.com/automatak/exe4cpp/archive/fb878a4de598ba9d6e4338afebf83f96e03af1b8.zip
+hash=SHA1=18B141E8CF09DC8D28CC62DD5FA2920670D501BD
+      no_extract=
+

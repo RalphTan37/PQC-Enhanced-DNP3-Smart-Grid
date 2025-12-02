@@ -29,6 +29,7 @@
 #include <iostream>
 #include <string>
 #include <thread>
+#include "../master/PQC_Handler.h"
 
 using namespace std;
 using namespace opendnp3;
@@ -59,6 +60,10 @@ void AddUpdates(UpdateBuilder& builder, State& state, const std::string& argumen
 
 int main(int argc, char* argv[])
 {
+    // --- PQC LOGIC START ---
+    PQCHandler::Initialize();
+    std::cout << "=== PQC-ENHANCED OUTSTATION: READY FOR KYBER ===" << std::endl;
+    // --- PQC LOGIC END ---
 
     // Specify what log levels to use. NORMAL is warning and above
     // You can add all the comms logging by uncommenting below.

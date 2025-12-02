@@ -121,6 +121,15 @@ if(DNP3_TESTS)
     endif()
 endif()
 
+# --- PQC INTEGRATION START ---
+# Depends on where liboqs was built
+set(LIBOQS_INCLUDE_DIR "C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/dependencies/liboqs/install/include") 
+set(LIBOQS_LIB_DIR "C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/dependencies/liboqs/install/lib")
+
+include_directories(${LIBOQS_INCLUDE_DIR})
+link_directories(${LIBOQS_LIB_DIR})
+# --- PQC INTEGRATION END ---
+
 # Examples
 if(DNP3_EXAMPLES)
     add_subdirectory(./cpp/examples/decoder)
