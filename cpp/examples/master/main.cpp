@@ -26,6 +26,7 @@
 #include <opendnp3/master/PrintingCommandResultCallback.h>
 #include <opendnp3/master/PrintingSOEHandler.h>
 #include "PQC_Handler.h"
+#include <chrono>
 
 using namespace std;
 using namespace opendnp3;
@@ -52,21 +53,43 @@ class TestSOEHandler : public ISOEHandler
 int main(int argc, char* argv[])
 {
     // --- PQC HYBRID KEY EXCHANGE START ---
+    std::cout << "[BENCHMARK] Starting PQC Initialization..." << std::endl;
+    
+    // Start the Timer
+    auto start_time = std::chrono::high_resolution_clock::now();
+
+    // Run the PQC Logic
     std::cout << "=== PQC-ENHANCED MODE: INITIALIZING ===" << std::endl;
     PQCHandler::Initialize();
 
     std::vector<uint8_t> masterPublicKey;
     std::vector<uint8_t> masterPrivateKey;
 
-    // 1. Master generates Kyber Keys
-    if(PQCHandler::GenerateKyberKeyPair(masterPublicKey, masterPrivateKey)) {
+    // Master generates Kyber Keys
+    bool pqc_success = PQCHandler::GenerateKyberKeyPair(masterPublicKey, masterPrivateKey);
+
+    // Stop the Timer
+    auto end_time = std::chrono::high_resolution_clock::now();
+
+    // Calculate Duration
+    auto duration_us = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
+    auto duration_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
+
+    if (pqc_success) {
         PQCHandler::PrintHex("Master Generated Kyber Public Key", masterPublicKey);
+        std::cout << "=== PQC-ENHANCED MODE: KEYS READY ===" << std::endl;
+        
+        // PRINT RESULTS FOR YOUR PAPER
+        std::cout << "----------------------------------------------------" << std::endl;
+        std::cout << "[BENCHMARK RESULTS]" << std::endl;
+        std::cout << "PQC Initialization Time: " << duration_us.count() << " microseconds" << std::endl;
+        std::cout << "Public Key Size:         " << masterPublicKey.size() << " bytes" << std::endl;
+        std::cout << "----------------------------------------------------" << std::endl;
+        
     } else {
-        std::cerr << "PQC Key Generation Failed!" << std::endl;
+        std::cerr << "[ERROR] PQC Generation Failed!" << std::endl;
         return -1;
     }
-    
-    std::cout << "=== PQC-ENHANCED MODE: KEYS READY ===" << std::endl;
     // --- PQC HYBRID KEY EXCHANGE END ---
 
     // Specify what log levels to use. NORMAL is warning and above
