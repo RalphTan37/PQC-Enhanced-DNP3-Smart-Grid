@@ -2,7 +2,7 @@ PQC Enhanced DNP3
 ========
 Contributors: Ralph Tan & Zukai Sagan
 
-This project expands on OpenDNP3 to integrate Post-Quantum Cryptography (PQC) algorithms. By incorporating PQC, we aim to future-proof communications, enhance resilience, and promote interoperability. This initiative will be a proactive step towards securing industrial contol systems against post quantum threats.
+This project expands on OpenDNP3 to integrate Post-Quantum Cryptography (PQC) algorithms. By incorporating PQC, we aim to future-proof communications, enhance resilience, and promote interoperability. This initiative will be a proactive step towards securing industrial contol systems against post-quantum threats.
 
 Opendnp3 is a portable, scalable, and rigorously tested implementation 
 of the [DNP3](https//www.dnp.org) protocol stack written in C++11. The library 
