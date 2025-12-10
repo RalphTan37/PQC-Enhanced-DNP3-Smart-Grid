@@ -122,9 +122,10 @@ if(DNP3_TESTS)
 endif()
 
 # --- PQC INTEGRATION START ---
-# Depends on where liboqs was built
-set(LIBOQS_INCLUDE_DIR "C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/dependencies/liboqs/install/include") 
-set(LIBOQS_LIB_DIR "C:/Users/ralph/OneDrive/Documents/PQC-Enhanced-DNP3-Smart-Grid/dependencies/liboqs/install/lib")
+# Depends on where liboqs was built. 
+# We use CMAKE_CURRENT_SOURCE_DIR so it works on any computer relative to the project root.
+set(LIBOQS_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/liboqs/install/include")
+set(LIBOQS_LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/dependencies/liboqs/install/lib")
 
 include_directories(${LIBOQS_INCLUDE_DIR})
 link_directories(${LIBOQS_LIB_DIR})
