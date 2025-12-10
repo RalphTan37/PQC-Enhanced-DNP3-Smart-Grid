@@ -9,79 +9,88 @@ of the [DNP3](https//www.dnp.org) protocol stack written in C++11. The library
 is designed for high-performance applications like many concurrent TCP
 sessions or huge device simulations. It also embeds with a small footprint on Linux.
 
-Setup and Execution - Windows OS
-========
+## Setup and Execution - Windows OS
 
-### Required Software Tools (Prerequisites)
-* Git
-* CMake (version 3.20+)
-* Developer Command Prompt for VS 2022
-* Visual Studio 2022 Commmunity Edition
+### Prerequisites
+* **Git** 
+* **CMake** (v3.20+)
+* **Visual Studio 2022 Community Edition** (C++ Desktop Workload)
+* **Developer Command Prompt for VS 2022**
 
-#### 1. Clone the Repository
-```
-git clone https://github.com/RalphTan37/PQC-Enhanced-DNP3-Smart-Grid.git
-```
+### Phase 1: Build & Configure
 
-#### 2. Change directory to project
+#### 1. Clone and Prepare Dependencies
+Open Developer Command Prompt for VS 2022 and run:
 ```
-cd PQC-Enhanced-DNP3-Smart-Grid
+git clone --recursive https://github.com/RalphTan37/PQC-Enhanced-DNP3-Smart-Grid.git
+cd PQC-Enhanced-DNP3-Smart-Grid\dependencies\liboqs
 ```
 
-#### 3. Create and Enter the Build Directory
+#### 2. Build PQC Library (liboqs)
+Build and install the cryptographic library locally:
 ```
 mkdir build
 cd build
+cmake -DCMAKE_INSTALL_PREFIX="..\install" -DBUILD_SHARED_LIBS=OFF ..
+cmake --build . --config Release
+cmake --install . --config Release
+cd ..\..\..\
 ```
-
-#### 4. Initial CMake Configuration
-Launch the Developer Command Prompt for VS 2022 <br>
-Make sure you are in the `build` directory
+#### 3. Configure PQC Enhanced DNP3 Project
+Create the build directory and run the initial configuration:
 ```
-cd \PQC-Enhanced-DNP3-Smart-Grid\build
-```
-Run command to generate the Visual Studio project files (.sln) in the `build` directory, pointing to the source code (..) and include the DNP3 demos
-```
+mkdir build
+cd build
 cmake -DDNP3_DEMO=ON ..
 ```
 
-***IMPORTANT CONFIGURATION*** <br>
-Launch the CMake GUI from the build directory
+***IMPORTANT CONFIGURATION (Manual Verification)*** <br>
+To ensure the demos are definitely enabled, launch the CMake GUI from the build directory:
 ```
 cmake-gui .
 ```
-Manually enable `DNP3_EXAMPLES` variable by checking the box. Then press Configure and Generate buttons to update the build files. <br>
-Rerun build command to compile all targets, including newly added demo projects.
+1. Locate the `DNP3_EXAMPLES` variable in the list
+2. Manually check the box if it is not already checked.
+3. Press Configure.
+4. Press Generate.
+5. Close the GUI and return to your terminal.
+
+#### 4. Build Executables
+Compile all targets, including the Master and Outstation demos:
 ```
 cmake --build . --config Release --target ALL_BUILD
 ```
 
-#### 5. Open Two Terminal Windows (Developer Command Prompt for VS 2022)
-Navigate to the project's root `build` directory 
+### Phase 2: Run Simulation
+Open two separate Developer Command Prompt windows and navigate to the build folder in both:
 ```
-cd \PQC-Enhanced-DNP3-Smart-Grid\build
+cd PQC-Enhanced-DNP3-Smart-Grid\build
 ```
-#### 6. Start the Outstation (Window 1)
-The Outstation starts first and begins listening for a connection on `0.0.0.0:20000`
+
+#### Window 1: Start the Outstation (Server)
+This simulates a smart grid device (RTU) listening for a connection on `0.0.0.0:20000`.
 ```
 .\cpp\examples\outstation\Release\outstation-demo.exe
 ```
-Primary function is to simulate a physical device (like a sensor or circuit breaker) and report changes.
-* `c` = counter
-* `b` = binary
-* `d` = doublebit
-* `a` = analog
-* `o` = octet string
-* `quit` = exit
+####  Output: `=== PQC-ENHANCED OUTSTATION: READY FOR KYBER ===`
 
-#### 7. Start the Master (Window 2)
-The Master connects to the Outstation and initiates the DNP3 communication sequence (Disable Unsolicited, Clear Restart IIN, Integrity Poll, Enable Unsolicited, follow by periodic polls).
+#### Window 2: Start the Master (Client)
+This simulates the control center connecting to the device.
 ```
 .\cpp\examples\master\Release\master-demo.exe
 ```
-The Master application's function is to monitor the Outstation and send commands (controls) to it. 
-* `i` (Integrity Scan): Forces the Master to poll the Outstation for call current date (Class 0, 1, 2, and 3), regardless of whether the values have changed.
-* `e` (Exception Scan): Forces the Master to poll for Class 1, 2, and 3 event data (data changed since the last poll)
-* `c` (Send CROB): Sends a Control Relay Output Block command. This is how the Master would simulate telling the Outstation to operate a relay
+#### Output: Benchmark results and `channel state change: OPEN`
+
+#### Interactive Commands
+Once connected, you can interact with the grid simulation.
+
+| Window | Key | Action |
+| :--- | :--- | :--- |
+| **Master** | `i` | **Integrity Scan** (Poll all data points) |
+| **Master** | `c` | **Control Command** (Send Latch On/Off) |
+| **Master** | `d` | **Disable Unsolicited** messages |
+| **Outstation** | `b` | Toggle **Binary Input** (Switch Flip) |
+| **Outstation** | `a` | Update **Analog Input** (Voltage Change) |
+| **Both** | `x` | **Exit** Program |
 
 The log output in both windows will confirm the successful connection and exchange of DNP3 application layer messages, validating the entire process
